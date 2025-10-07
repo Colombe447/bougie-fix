@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bougie Fix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container row">
+      <div class="brand">🕯️ Bougie Fix</div>
+      <nav class="nav">
+        <a href="#produits">Produits</a>
+        <a href="#personnaliser">Personnaliser</a>
+        <a href="#faq">FAQ</a>
+        <button id="openCart" class="btn ghost">Panier (<span id="cartCount">0</span>)</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <div class="pill">Nouveau : configurateur de bougie sur mesure</div>
+        <h1>Bougie Fix</h1>
+        <p>Des bougies propres, durables et personnalisables, coulées en petites séries à Paris. Créez la vôtre en quelques clics.</p>
+        <div class="row gap">
+          <a class="btn" href="#personnaliser">Personnaliser ma bougie</a>
+          <a class="btn ghost" href="#produits">Voir les produits</a>
+        </div>
+        <div class="hero-badges">
+          <span>🚚 Livraison 48h</span>
+          <span>✅ Satisfait ou remboursé</span>
+        </div>
+      </div>
+      <div class="hero-grid">
+        <div class="jar j1"></div>
+        <div class="jar j2"></div>
+        <div class="jar j3"></div>
+        <div class="jar j4"></div>
+      </div>
+    </section>
+
+    <section id="produits">
+      <div class="section-head">
+        <h2>Nos bougies</h2>
+        <p class="muted">Cire végétale • Mèches sans plomb • Parfums IFRA</p>
+      </div>
+      <div id="productGrid" class="grid"></div>
+    </section>
+
+    <hr class="sep">
+
+    <section id="personnaliser">
+      <h2>Créez votre bougie</h2>
+      <div class="builder">
+        <div class="builder-left">
+          <div class="jar big"></div>
+          <div class="muted small">Prix estimé : <b id="estPrice">—</b></div>
+        </div>
+        <div class="builder-right">
+          <label class="group">
+            <span>Parfum</span>
+            <select id="scent"></select>
+          </label>
+          <label class="group">
+            <span>Cire</span>
+            <select id="wax"></select>
+          </label>
+          <label class="group">
+            <span>Mèche</span>
+            <select id="wick"></select>
+          </label>
+          <label class="group">
+            <span>Taille</span>
+            <select id="size"></select>
+          </label>
+          <label class="group">
+            <span>Gravure (optionnelle)</span>
+            <input id="engraving" maxlength="24" placeholder="Ex: Pour Marie ♥">
+            <div class="hint">24 caractères max • +4,00 €</div>
+          </label>
+          <div class="row gap">
+            <button id="minus" class="btn ghost">−</button>
+            <span id="qty" class="qty">1</span>
+            <button id="plus" class="btn ghost">+</button>
+            <button id="addCustom" class="btn grow">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <details class="faq"><summary>De quoi sont faites vos bougies ?</summary><p>Nos bougies sont à base de cires végétales (soja/colza), avec des mèches 100% coton ou bois, et des parfums conformes IFRA.</p></details>
+      <details class="faq"><summary>Quels sont les délais d'expédition ?</summary><p>Nous préparons vos commandes sous 24h et livrons en 48h ouvrées en France métropolitaine.</p></details>
+      <details class="faq"><summary>Puis-je personnaliser une bougie pour un événement ?</summary><p>Oui, nous proposons des séries personnalisées pour mariages et entreprises. Contactez-nous pour un devis.</p></details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Bougie Fix — Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div id="drawer" class="drawer hidden">
+    <div class="drawer-panel">
+      <div class="row between center">
+        <h3>Panier</h3>
+        <button id="closeCart" class="btn ghost">Fermer</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="row between">
+        <span>Sous-total</span>
+        <b id="cartTotal">0,00 €</b>
+      </div>
+      <button id="checkout" class="btn full">Passer au paiement</button>
+      <p class="muted small center">Démo : connectez Stripe/PayPal pour payer.</p>
+    </div>
+    <div class="drawer-bg"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
