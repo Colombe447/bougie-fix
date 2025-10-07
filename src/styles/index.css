@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ring: 0 0% 0%;
+}
+/* simple card + button utilities */
+.btn { @apply inline-flex items-center justify-center px-4 py-2 rounded-2xl border bg-slate-900 text-white hover:opacity-90 transition; }
+.btn-ghost { @apply inline-flex items-center px-3 py-2 rounded-2xl border border-slate-200 bg-white text-slate-900 hover:bg-slate-50; }
+.badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs border; }
+.card { @apply rounded-2xl border; }
+.card-body { @apply p-4; }
+.card-header { @apply p-4 border-b; }
+.card-footer { @apply p-4 border-t; }
+.input { @apply w-full rounded-xl border px-3 py-2; }
+.separator { @apply my-10 border-t; }
